@@ -3,12 +3,14 @@
 
 declare const Deno: any;
 
-const PSK = "Enri181820";
+const PSK = "Enrinmapcom";
 
 const STRIP_HEADERS = new Set([
   "host",
   "connection",
   "content-length",
+  // Deno passes compressed response bytes through. Ask origins for plain bodies.
+  "accept-encoding",
   "transfer-encoding",
   "proxy-connection",
   "proxy-authorization",
